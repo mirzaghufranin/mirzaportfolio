@@ -1,46 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIRZA GHUFRAN - My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <title>Mirza Ghufran | Developer Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <meta name="description" content="Mirza Ghufran – Developer Portfolio with modern UI, smooth scrolling and clean design.">
+  <meta name="keywords" content="Mirza Ghufran, Web Developer, Portfolio, Java, Python, JavaScript">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <!-- Google Analytics (ADD YOUR ID) -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX');
+  </script>
+  -->
+
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif; scroll-behavior:smooth; }
+    body { background:#0b0b0b; color:#fff; overflow-x:hidden; }
+
+    #progress {
+      position:fixed; top:0; left:0; height:3px; width:0;
+      background:#00f5a0; z-index:9999;
+    }
+
+    section {
+      min-height:100vh;
+      padding:120px 10%;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .hero {
+      background: radial-gradient(circle at top, #151515, #0b0b0b);
+    }
+
+    h1 { font-size:3.5rem; line-height:1.2; }
+    h2 { font-size:2.3rem; margin-bottom:40px; }
+    .highlight { color:#00f5a0; }
+
+    p { color:#cfcfcf; line-height:1.7; max-width:800px; }
+
+    .btn {
+      margin-top:35px;
+      padding:14px 36px;
+      border-radius:30px;
+      background:#00f5a0;
+      color:#000;
+      text-decoration:none;
+      font-weight:600;
+      width:fit-content;
+      transition:.3s;
+    }
+
+    .btn:hover {
+      transform:translateY(-4px);
+      box-shadow:0 10px 30px rgba(0,245,160,.3);
+    }
+
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .card {
+      background:#151515;
+      padding:30px;
+      border-radius:18px;
+      transition:.4s;
+    }
+
+    .card:hover {
+      transform:translateY(-10px);
+      background:#1c1c1c;
+    }
+
+    .card h3 { color:#00f5a0; margin-bottom:10px; }
+
+    footer {
+      padding:40px 10%;
+      background:#080808;
+      text-align:center;
+      color:#888;
+    }
+
+    footer a { color:#00f5a0; margin:0 10px; text-decoration:none; }
+
+    /* Reveal animation */
+    .reveal { opacity:0; transform:translateY(40px); transition:.8s ease; }
+    .reveal.active { opacity:1; transform:translateY(0); }
+
+    form input, form textarea {
+      width:100%;
+      padding:14px;
+      margin-bottom:15px;
+      border-radius:10px;
+      border:none;
+      background:#151515;
+      color:#fff;
+    }
+
+    form button {
+      border:none;
+      cursor:pointer;
+    }
+
+    @media(max-width:768px){
+      h1 { font-size:2.4rem; }
+    }
+  </style>
 </head>
+
 <body>
 
-    <nav>
-        <div class="logo">MIRZA GHUFRAN</div>
-        <ul>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+<div id="progress"></div>
 
-    <header class="hero">
-        <h1 class="reveal">Creating Digital <br><span>Experiences.</span></h1>
-        <p class="reveal-slow">Designer & Developer based in Delhi.</p>
-        <div class="scroll-indicator"></div>
-    </header>
+<section class="hero">
+  <h1 class="reveal">
+    Hi, I’m <span class="highlight">Mirza Ghufran</span><br>
+    A Passionate Developer
+  </h1>
+  <p class="reveal">
+    I design and build clean, modern and user-focused web applications with strong attention to performance and design.
+  </p>
 
-    <section id="work" class="projects">
-        <h2>Selected Work</h2>
-        <div class="grid">
-            <div class="card"><h3>Project One</h3><p>Visual Identity</p></div>
-            <div class="card"><h3>Project Two</h3><p>Web Development</p></div>
-            <div class="card"><h3>Project Three</h3><p>UI/UX Design</p></div>
-            <div class="card"><h3>Project Four</h3><p>Motion Graphics</p></div>
-        </div>
-    </section>
+  <a href="#projects" class="btn reveal">View My Work</a>
+  <a href="resume.pdf" class="btn reveal" style="margin-left:15px;">Download Resume</a>
+</section>
 
-    <footer id="contact">
-        <h2>Let's build something together.</h2>
-        <a href="mailto:mghufran921@gmail.com" class="email-link">Get in touch</a>
-    </footer>
+<section>
+  <h2 class="reveal">About Me</h2>
+  <p class="reveal">
+    I enjoy turning ideas into reality using code. I focus on writing clean,
+    efficient and scalable solutions while continuously learning modern technologies.
+  </p>
+</section>
 
-    <script src="script.js"></script>
+<section>
+  <h2 class="reveal">Skills</h2>
+  <div class="grid">
+    <div class="card reveal">HTML / CSS</div>
+    <div class="card reveal">JavaScript</div>
+    <div class="card reveal">Java</div>
+    <div class="card reveal">Python</div>
+    <div class="card reveal">Git & GitHub</div>
+    <div class="card reveal">Problem Solving</div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2 class="reveal">Projects</h2>
+  <div class="grid">
+    <div class="card reveal">
+      <h3>Portfolio Website</h3>
+      <p>Modern portfolio with smooth scrolling and animations.</p>
+      <a class="btn" href="#">Live</a>
+      <a class="btn" href="#" style="margin-left:10px;">GitHub</a>
+    </div>
+    <div class="card reveal">
+      <h3>Major Project</h3>
+      <p>Automated system solving real-world problems.</p>
+      <a class="btn" href="#">Live</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="reveal">Contact Me</h2>
+  <form class="reveal" action="https://formsubmit.co/yourmail@example.com" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" rows="5" placeholder="Your Message"></textarea>
+    <button class="btn" type="submit">Send Message</button>
+  </form>
+</section>
+
+<footer>
+  © 2026 Mirza Ghufran |
+  <a href="#">GitHub</a>
+  <a href="#">LinkedIn</a>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const scrollTop = document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    document.getElementById('progress').style.width = (scrollTop / height) * 100 + '%';
+  });
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('active');
+    });
+  }, { threshold:0.15 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
 </body>
-
 </html>
-
